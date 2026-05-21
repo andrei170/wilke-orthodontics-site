@@ -1,0 +1,1739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wilke Orthodontics | Green Bay, Sturgeon Bay &amp; Oconto Falls, WI</title>
+<meta name="description" content="Wilke Orthodontics offers specialist orthodontic care across Northeast Wisconsin. Invisalign, braces, and SureSmile 3D scanning at three convenient locations. Schedule your free consultation today.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* =============================================
+     DESIGN TOKENS
+  ============================================= */
+  :root {
+    --sky:      #e8f4f8;
+    --sky-deep: #cce8f2;
+    --teal:     #2a8fa8;
+    --teal-dark:#1d6e83;
+    --teal-soft:#5cb3c9;
+    --coral:    #f07b5a;
+    --coral-soft:#f5a98e;
+    --cream:    #fdf9f5;
+    --warm-white:#ffffff;
+    --sand:     #f5efe7;
+    --line:     #e4ddd4;
+    --line-soft:#ede8e0;
+    --ink:      #1c2228;
+    --ink-mid:  #3d4a56;
+    --ink-soft: #6b7a88;
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-body:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 22px;
+    --shadow-sm: 0 2px 8px rgba(28,34,40,0.07);
+    --shadow-md: 0 8px 28px rgba(28,34,40,0.10);
+    --shadow-lg: 0 20px 60px rgba(28,34,40,0.13);
+    --transition: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* =============================================
+     RESET + BASE
+  ============================================= */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body {
+    font-family: var(--font-body);
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.68;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  img { display: block; max-width: 100%; height: auto; }
+  a { color: var(--teal); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* =============================================
+     LAYOUT HELPERS
+  ============================================= */
+  .wrap       { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+  .wrap-narrow{ max-width: 860px;  margin: 0 auto; padding: 0 28px; }
+  .section    { padding: 96px 0; }
+  .section-sm { padding: 64px 0; }
+  .alt-bg     { background: var(--warm-white); }
+  .sand-bg    { background: var(--sand); }
+
+  .eyebrow {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 14px;
+  }
+  h2.headline {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 4vw, 42px);
+    line-height: 1.18;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 18px;
+    letter-spacing: -0.3px;
+  }
+  .intro-text {
+    font-size: 17px;
+    color: var(--ink-mid);
+    max-width: 680px;
+    margin-bottom: 52px;
+    line-height: 1.72;
+  }
+
+  /* =============================================
+     HEADER
+  ============================================= */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+    transition: box-shadow var(--transition);
+  }
+  .site-header.scrolled {
+    box-shadow: var(--shadow-md);
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+  }
+  .logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+  .logo-mark {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--teal) 0%, var(--teal-soft) 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .logo-text {
+    line-height: 1.2;
+  }
+  .logo-text strong {
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.2px;
+  }
+  .logo-text span {
+    font-size: 11px;
+    color: var(--ink-soft);
+    font-weight: 500;
+    letter-spacing: 0.4px;
+  }
+  .main-nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  .main-nav a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink-mid);
+    transition: color var(--transition);
+  }
+  .main-nav a:hover { color: var(--teal); text-decoration: none; }
+  .btn-nav {
+    background: var(--teal);
+    color: var(--warm-white) !important;
+    padding: 10px 22px;
+    border-radius: 50px;
+    font-size: 13.5px !important;
+    font-weight: 600 !important;
+    transition: background var(--transition), transform var(--transition);
+  }
+  .btn-nav:hover {
+    background: var(--teal-dark) !important;
+    transform: translateY(-1px);
+    text-decoration: none !important;
+  }
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    background: none;
+    border: none;
+  }
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--ink);
+    border-radius: 2px;
+    transition: var(--transition);
+  }
+
+  /* =============================================
+     HERO
+  ============================================= */
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient(155deg, #e4f3f9 0%, #d0eaf5 40%, #f0f8fb 100%);
+  }
+  .hero-bg-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    opacity: 0.18;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      110deg,
+      rgba(232,244,248,0.97) 0%,
+      rgba(232,244,248,0.88) 45%,
+      rgba(232,244,248,0.30) 100%
+    );
+  }
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+    min-height: 100svh;
+    padding: 100px 0 80px;
+  }
+  .hero-copy {}
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(42,143,168,0.1);
+    border: 1px solid rgba(42,143,168,0.22);
+    border-radius: 50px;
+    padding: 6px 14px 6px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--teal-dark);
+    letter-spacing: 0.5px;
+    margin-bottom: 28px;
+  }
+  .hero-eyebrow svg { flex-shrink: 0; }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 5.5vw, 62px);
+    line-height: 1.08;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 22px;
+    letter-spacing: -0.8px;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--teal);
+  }
+  .hero-lead {
+    font-size: 18px;
+    color: var(--ink-mid);
+    max-width: 500px;
+    margin-bottom: 40px;
+    line-height: 1.7;
+  }
+  .hero-cta-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+  }
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--teal);
+    color: var(--warm-white);
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+    text-decoration: none;
+    box-shadow: 0 4px 18px rgba(42,143,168,0.30);
+  }
+  .btn-primary:hover {
+    background: var(--teal-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(42,143,168,0.38);
+    text-decoration: none;
+    color: var(--warm-white);
+  }
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: var(--ink-mid);
+    padding: 14px 26px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 500;
+    border: 1.5px solid var(--line);
+    transition: border-color var(--transition), color var(--transition), transform var(--transition);
+    text-decoration: none;
+  }
+  .btn-secondary:hover {
+    border-color: var(--teal);
+    color: var(--teal);
+    transform: translateY(-1px);
+    text-decoration: none;
+  }
+  .hero-trust-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 36px;
+  }
+  .trust-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,0.85);
+    border: 1px solid var(--line);
+    border-radius: 50px;
+    padding: 6px 14px;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--ink-mid);
+  }
+  .trust-pill svg { color: var(--teal); flex-shrink: 0; }
+  .hero-photo-col {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-photo-frame {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+  }
+  .hero-photo-frame .photo-main {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+  }
+  .hero-photo-frame .photo-accent {
+    position: absolute;
+    bottom: -20px;
+    left: -24px;
+    width: 52%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    border: 4px solid var(--warm-white);
+  }
+  .floating-badge {
+    position: absolute;
+    top: 24px;
+    right: -16px;
+    background: var(--warm-white);
+    border-radius: var(--radius-md);
+    padding: 16px 20px;
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    min-width: 110px;
+  }
+  .floating-badge .badge-num {
+    font-family: var(--font-display);
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--teal);
+    line-height: 1;
+    display: block;
+  }
+  .floating-badge .badge-label {
+    font-size: 11px;
+    color: var(--ink-soft);
+    font-weight: 500;
+    line-height: 1.4;
+    display: block;
+    margin-top: 4px;
+  }
+  .hero-deco-circle {
+    position: absolute;
+    bottom: -60px;
+    right: -60px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(42,143,168,0.12), transparent 70%);
+    pointer-events: none;
+  }
+
+  /* =============================================
+     TRUST BAND
+  ============================================= */
+  .trust-band {
+    background: var(--teal);
+    padding: 20px 0;
+  }
+  .trust-band-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px 24px;
+  }
+  .trust-band-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.92);
+  }
+  .trust-band-item svg { color: rgba(255,255,255,0.70); flex-shrink: 0; }
+  .trust-sep {
+    color: rgba(255,255,255,0.30);
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  /* =============================================
+     TREATMENTS
+  ============================================= */
+  .treatments-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+  .treatment-card {
+    background: var(--warm-white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    padding: 32px 26px 28px;
+    position: relative;
+    overflow: hidden;
+    transition: transform var(--transition), box-shadow var(--transition);
+  }
+  .treatment-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--teal), var(--teal-soft));
+    opacity: 0;
+    transition: opacity var(--transition);
+  }
+  .treatment-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+  .treatment-card:hover::before { opacity: 1; }
+  .treatment-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    background: var(--sky);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: var(--teal);
+  }
+  .treatment-card h3 {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 10px;
+    letter-spacing: -0.2px;
+  }
+  .treatment-card p {
+    font-size: 14.5px;
+    color: var(--ink-soft);
+    line-height: 1.65;
+  }
+  .treatment-tag {
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--teal);
+    letter-spacing: 0.4px;
+  }
+
+  /* =============================================
+     DOCTOR BIO
+  ============================================= */
+  .doctor-grid {
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: 72px;
+    align-items: center;
+  }
+  .doctor-photo-wrap {
+    position: relative;
+  }
+  .doctor-photo {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+  }
+  .doctor-photo-placeholder {
+    width: 100%;
+    aspect-ratio: 3/4;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(155deg, var(--sky-deep) 0%, var(--teal-soft) 60%, var(--sky) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-lg);
+  }
+  .doctor-photo-placeholder .initials {
+    font-family: var(--font-display);
+    font-size: 80px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.55);
+    line-height: 1;
+  }
+  .doctor-photo-placeholder .name-label {
+    font-size: 15px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.85);
+    margin-top: 12px;
+    letter-spacing: 0.3px;
+  }
+  .credential-badge {
+    position: absolute;
+    bottom: -18px;
+    right: -18px;
+    background: var(--warm-white);
+    border-radius: var(--radius-md);
+    padding: 14px 18px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--line-soft);
+  }
+  .credential-badge .cred-school {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--teal-dark);
+    letter-spacing: 0.3px;
+    display: block;
+  }
+  .credential-badge .cred-detail {
+    font-size: 11px;
+    color: var(--ink-soft);
+    display: block;
+    margin-top: 2px;
+  }
+  .doctor-bio h2 {
+    margin-bottom: 8px;
+  }
+  .doctor-bio .bio-name {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--teal);
+    letter-spacing: 0.3px;
+    margin-bottom: 22px;
+    display: block;
+  }
+  .doctor-bio p {
+    font-size: 16.5px;
+    color: var(--ink-mid);
+    margin-bottom: 18px;
+    line-height: 1.72;
+  }
+  .doctor-bio p:last-of-type { margin-bottom: 0; }
+  .cred-list {
+    margin-top: 36px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .cred-item {
+    background: var(--sand);
+    border-radius: var(--radius-sm);
+    padding: 16px 18px;
+    border: 1px solid var(--line-soft);
+  }
+  .cred-item dt {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: var(--coral);
+    margin-bottom: 4px;
+  }
+  .cred-item dd {
+    font-size: 14px;
+    color: var(--ink);
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  /* =============================================
+     LOCATIONS
+  ============================================= */
+  .locations-intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+    margin-bottom: 64px;
+  }
+  .locations-intro-photo {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+  }
+  .locations-intro-photo-placeholder {
+    width: 100%;
+    aspect-ratio: 4/3;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, var(--sky) 0%, var(--sky-deep) 100%);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .locations-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+  .location-card {
+    background: var(--warm-white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: transform var(--transition), box-shadow var(--transition);
+  }
+  .location-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+  .location-card-head {
+    background: linear-gradient(135deg, var(--teal) 0%, var(--teal-soft) 100%);
+    padding: 28px 26px 22px;
+    position: relative;
+  }
+  .location-card-head::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: var(--warm-white);
+    border-radius: 50% 50% 0 0 / 20px 20px 0 0;
+  }
+  .location-pill {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 50px;
+    padding: 3px 10px;
+    font-size: 10.5px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.9);
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .location-card-head h3 {
+    font-family: var(--font-display);
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--warm-white);
+    line-height: 1.1;
+    letter-spacing: -0.3px;
+  }
+  .location-card-body {
+    padding: 26px 26px 28px;
+  }
+  .location-addr {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin-bottom: 16px;
+  }
+  .location-addr svg { color: var(--teal); margin-top: 3px; flex-shrink: 0; }
+  .location-addr address {
+    font-style: normal;
+    font-size: 15px;
+    color: var(--ink-mid);
+    line-height: 1.55;
+  }
+  .location-phone {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    color: var(--teal);
+    font-weight: 600;
+    margin-bottom: 14px;
+    text-decoration: none;
+  }
+  .location-phone:hover { text-decoration: underline; }
+  .location-hours {
+    font-size: 13px;
+    color: var(--ink-soft);
+    border-top: 1px solid var(--line-soft);
+    padding-top: 14px;
+    margin-top: 4px;
+    line-height: 1.65;
+  }
+  .location-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 18px;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--teal);
+  }
+  .location-cta svg { transition: transform var(--transition); }
+  .location-card:hover .location-cta svg { transform: translateX(3px); }
+
+  /* =============================================
+     SOCIAL PROOF / TESTIMONIALS
+  ============================================= */
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+  .review-card {
+    background: var(--warm-white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    padding: 30px 26px;
+    position: relative;
+  }
+  .review-stars {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 16px;
+  }
+  .review-stars svg { color: #f4b942; }
+  .review-text {
+    font-size: 15.5px;
+    color: var(--ink-mid);
+    line-height: 1.68;
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+  .review-author {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .review-author span {
+    font-weight: 400;
+    color: var(--ink-soft);
+    font-size: 12.5px;
+    display: block;
+    margin-top: 2px;
+  }
+  .review-quote-icon {
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    color: var(--sky-deep);
+  }
+
+  /* =============================================
+     FREE CONSULT CTA BAND
+  ============================================= */
+  .cta-band {
+    background: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal) 60%, var(--teal-soft) 100%);
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-band::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255,255,255,0.08), transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .cta-band::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    left: -80px;
+    width: 360px;
+    height: 360px;
+    background: radial-gradient(circle, rgba(255,255,255,0.06), transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .cta-band-inner { position: relative; z-index: 1; }
+  .cta-band h2 {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 700;
+    color: var(--warm-white);
+    margin-bottom: 16px;
+    letter-spacing: -0.4px;
+    line-height: 1.15;
+  }
+  .cta-band p {
+    font-size: 18px;
+    color: rgba(255,255,255,0.85);
+    max-width: 560px;
+    margin: 0 auto 36px;
+    line-height: 1.65;
+  }
+  .btn-white {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--warm-white);
+    color: var(--teal-dark);
+    padding: 16px 34px;
+    border-radius: 50px;
+    font-size: 15.5px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    transition: transform var(--transition), box-shadow var(--transition);
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+  }
+  .btn-white:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 32px rgba(0,0,0,0.22);
+    text-decoration: none;
+    color: var(--teal-dark);
+  }
+  .cta-locs {
+    margin-top: 28px;
+    font-size: 13.5px;
+    color: rgba(255,255,255,0.72);
+    letter-spacing: 0.3px;
+  }
+
+  /* =============================================
+     CONTACT / NAP
+  ============================================= */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+  .contact-col h2 { margin-bottom: 10px; }
+  .contact-col .intro-text { margin-bottom: 32px; }
+  .contact-detail-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .contact-detail {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .contact-icon-wrap {
+    width: 42px;
+    height: 42px;
+    background: var(--sky);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--teal);
+    flex-shrink: 0;
+  }
+  .contact-detail-text dt {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 3px;
+  }
+  .contact-detail-text dd {
+    font-size: 15px;
+    color: var(--ink);
+    font-weight: 500;
+    line-height: 1.5;
+  }
+  .contact-detail-text dd a {
+    color: var(--teal);
+    font-weight: 600;
+  }
+  .contact-map-card {
+    background: var(--warm-white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+  .contact-map-card .map-placeholder {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: linear-gradient(135deg, var(--sky) 0%, var(--sky-deep) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+  }
+  .contact-map-card .map-placeholder svg { color: var(--teal); }
+  .contact-map-card .map-placeholder p {
+    font-size: 14px;
+    color: var(--ink-mid);
+    font-weight: 500;
+  }
+  .contact-map-body {
+    padding: 22px 24px;
+  }
+  .contact-map-body .map-loc-name {
+    font-weight: 700;
+    color: var(--ink);
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+  .contact-map-body address {
+    font-style: normal;
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+    line-height: 1.55;
+  }
+  .link-directions {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--teal);
+  }
+
+  /* =============================================
+     FOOTER
+  ============================================= */
+  .site-footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.68);
+    padding: 64px 0 32px;
+    font-size: 14px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 52px;
+  }
+  .footer-brand .logo-text strong { color: var(--warm-white); }
+  .footer-brand .logo-text span { color: rgba(255,255,255,0.5); }
+  .footer-about {
+    font-size: 13.5px;
+    line-height: 1.72;
+    margin-top: 18px;
+    max-width: 300px;
+    color: rgba(255,255,255,0.55);
+  }
+  .footer-col h5 {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.40);
+    margin-bottom: 16px;
+  }
+  .footer-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .footer-col ul li a {
+    color: rgba(255,255,255,0.65);
+    font-size: 13.5px;
+    transition: color var(--transition);
+  }
+  .footer-col ul li a:hover { color: var(--teal-soft); text-decoration: none; }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .footer-bottom p { font-size: 12.5px; color: rgba(255,255,255,0.38); }
+  .footer-demo-note {
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+  }
+  .footer-demo-note a { color: var(--teal-soft); }
+
+  /* =============================================
+     SCROLL REVEAL
+  ============================================= */
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                  transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.12s; }
+    .reveal-delay-2 { transition-delay: 0.22s; }
+    .reveal-delay-3 { transition-delay: 0.32s; }
+    .reveal-delay-4 { transition-delay: 0.42s; }
+    .reveal-delay-5 { transition-delay: 0.52s; }
+    .reveal-delay-6 { transition-delay: 0.62s; }
+  }
+
+  /* =============================================
+     RESPONSIVE
+  ============================================= */
+  @media (max-width: 1040px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .doctor-grid { grid-template-columns: 1fr; gap: 48px; }
+    .doctor-photo-wrap { max-width: 380px; margin: 0 auto; }
+    .cred-list { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 860px) {
+    .hero-inner {
+      grid-template-columns: 1fr;
+      padding: 100px 0 60px;
+      gap: 48px;
+    }
+    .hero-photo-col { order: -1; }
+    .hero-photo-frame { max-width: 340px; margin: 0 auto; }
+    .treatments-grid { grid-template-columns: 1fr; }
+    .locations-intro-grid { grid-template-columns: 1fr; gap: 36px; }
+    .locations-grid { grid-template-columns: 1fr; }
+    .reviews-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  }
+
+  @media (max-width: 680px) {
+    .main-nav { display: none; }
+    .hamburger { display: flex; }
+    .hero-trust-pills { flex-direction: column; align-items: flex-start; }
+    .hero-cta-group { flex-direction: column; align-items: flex-start; }
+    .section { padding: 64px 0; }
+    .doctor-grid { gap: 36px; }
+    .floating-badge { right: 8px; top: 16px; }
+    .credential-badge { right: 0; bottom: -14px; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- =============================================
+     HEADER
+============================================= -->
+<header class="site-header" id="site-header">
+  <div class="wrap">
+    <div class="header-inner">
+      <a href="#hero" class="logo-wrap" aria-label="Wilke Orthodontics home">
+        <div class="logo-mark" aria-hidden="true">
+          <!-- tooth SVG icon -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2C8.5 2 5 5 5 8.5c0 2 .5 3.5 1 5L8 20c.5 2 2 2 4 2s3.5 0 4-2l2-6.5c.5-1.5 1-3 1-5C19 5 15.5 2 12 2z"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <strong>Wilke Orthodontics</strong>
+          <span>Northeast Wisconsin</span>
+        </div>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#treatments">Treatments</a>
+        <a href="#about">Dr. Wilke</a>
+        <a href="#locations">Locations</a>
+        <a href="#contact">Contact</a>
+        <a href="mailto:ortho@wilkeortho.com" class="btn-nav">Free Consult</a>
+      </nav>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- =============================================
+     HERO
+============================================= -->
+<section class="hero" id="hero">
+  <!-- Background: real slideshow photo from wilkeorthodontics.com -->
+  <img
+    src="https://www.wilkeorthodontics.com/assets/images/slideshow/slide1.jpg"
+    alt=""
+    class="hero-bg-img"
+    aria-hidden="true"
+    fetchpriority="high"
+  >
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <div class="hero-eyebrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Marquette-Trained Orthodontist
+        </div>
+        <h1>Straighter smiles for the <em>whole family</em> in Northeast Wisconsin</h1>
+        <p class="hero-lead">From your child's first Phase 1 consult to adult Invisalign, Dr. Kevin J. Wilke has provided specialist orthodontic care across Green Bay, Sturgeon Bay, and Oconto Falls since 1995.</p>
+        <div class="hero-cta-group">
+          <a href="mailto:ortho@wilkeortho.com" class="btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg>
+            Schedule Your Free Consult
+          </a>
+          <a href="#treatments" class="btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 8 12 12 14 14"/></svg>
+            See Treatments
+          </a>
+        </div>
+        <div class="hero-trust-pills">
+          <span class="trust-pill">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            31 years of specialty care
+          </span>
+          <span class="trust-pill">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            3 NE Wisconsin locations
+          </span>
+          <span class="trust-pill">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Silver Invisalign provider
+          </span>
+        </div>
+      </div>
+      <div class="hero-photo-col">
+        <div class="hero-photo-frame">
+          <!-- Real office/team spotlight photo -->
+          <img
+            src="https://www.wilkeorthodontics.com/assets/images/spotlight/spot01dec01.jpg"
+            alt="Wilke Orthodontics team"
+            class="photo-main"
+            fetchpriority="high"
+            width="480"
+            height="600"
+          >
+          <!-- Secondary spot photo -->
+          <img
+            src="https://www.wilkeorthodontics.com/assets/images/spotlight/spot01dec02.jpg"
+            alt="Patient care at Wilke Orthodontics"
+            class="photo-accent"
+            loading="lazy"
+            width="240"
+            height="180"
+          >
+          <div class="floating-badge" aria-hidden="true">
+            <span class="badge-num">31</span>
+            <span class="badge-label">Years in practice</span>
+          </div>
+          <div class="hero-deco-circle" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     TRUST BAND
+============================================= -->
+<div class="trust-band" aria-label="Practice credentials">
+  <div class="wrap">
+    <div class="trust-band-inner">
+      <div class="trust-band-item">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Dr. Kevin J. Wilke, DDS, MS (Orthodontics)
+      </div>
+      <span class="trust-sep" aria-hidden="true">|</span>
+      <div class="trust-band-item">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Marquette University, DDS 1993 + MS Orthodontics 1995
+      </div>
+      <span class="trust-sep" aria-hidden="true">|</span>
+      <div class="trust-band-item">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Independent, doctor-owned practice since 1995
+      </div>
+      <span class="trust-sep" aria-hidden="true">|</span>
+      <div class="trust-band-item">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Silver Invisalign Provider
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =============================================
+     TREATMENTS
+============================================= -->
+<section class="section alt-bg" id="treatments">
+  <div class="wrap">
+    <span class="eyebrow reveal">What we offer</span>
+    <h2 class="headline reveal">Specialist orthodontic care for every age and every case</h2>
+    <p class="intro-text reveal">Whether your child needs early interceptive care, your teenager wants Invisalign, or you are an adult considering braces for the first time, every treatment at Wilke Orthodontics is planned and supervised by Dr. Wilke himself.</p>
+    <div class="treatments-grid">
+      <div class="treatment-card reveal reveal-delay-1">
+        <div class="treatment-icon" aria-hidden="true">
+          <!-- Invisalign aligner icon -->
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.5 2 5 5 5 8.5c0 2 .5 3.5 1 5L8 20c.5 2 2 2 4 2s3.5 0 4-2l2-6.5c.5-1.5 1-3 1-5C19 5 15.5 2 12 2z"/></svg>
+        </div>
+        <h3>Invisalign</h3>
+        <p>Clear aligner therapy for adults and adolescents. Removable, virtually invisible, and planned by a board-eligible orthodontic specialist so your results are precise from the first tray to the last.</p>
+        <span class="treatment-tag">Adults + Teens</span>
+      </div>
+      <div class="treatment-card reveal reveal-delay-2">
+        <div class="treatment-icon" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.5 2 5 5 5 8.5c0 2 .5 3.5 1 5L8 20c.5 2 2 2 4 2s3.5 0 4-2l2-6.5c.5-1.5 1-3 1-5C19 5 15.5 2 12 2z"/><line x1="7" y1="10" x2="17" y2="10"/></svg>
+        </div>
+        <h3>Invisalign Teen</h3>
+        <p>The same clear aligner technology as Invisalign, designed for growing patients. Compliance indicators, extra aligners for the unexpected, and space built in for teeth still erupting.</p>
+        <span class="treatment-tag">Teenagers</span>
+      </div>
+      <div class="treatment-card reveal reveal-delay-3">
+        <div class="treatment-icon" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="8" rx="2"/><line x1="7" y1="12" x2="7" y2="12" stroke-width="3"/><line x1="12" y1="12" x2="12" y2="12" stroke-width="3"/><line x1="17" y1="12" x2="17" y2="12" stroke-width="3"/></svg>
+        </div>
+        <h3>Braces</h3>
+        <p>Metal, clear, and self-ligating bracket systems for the full range of cases. Proven technology, expertly placed, and the right choice when precision and predictability matter most.</p>
+        <span class="treatment-tag">Children, Teens + Adults</span>
+      </div>
+      <div class="treatment-card reveal reveal-delay-1">
+        <div class="treatment-icon" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        </div>
+        <h3>SureSmile 3D Scanning</h3>
+        <p>No more alginate impressions. Our SureSmile 3D digital workflow captures your bite in full detail in minutes, letting Dr. Wilke plan your treatment on a precise digital model before a single wire is placed.</p>
+        <span class="treatment-tag">All Patients</span>
+      </div>
+      <div class="treatment-card reveal reveal-delay-2">
+        <div class="treatment-icon" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20v-1a8 8 0 0 1 16 0v1"/></svg>
+        </div>
+        <h3>Early (Phase 1) Treatment</h3>
+        <p>Some growth patterns respond best to early intervention. Dr. Wilke will let you know honestly whether your child benefits from Phase 1 care now, or whether waiting is the right call.</p>
+        <span class="treatment-tag">Ages 7 to 11</span>
+      </div>
+      <div class="treatment-card reveal reveal-delay-3">
+        <div class="treatment-icon" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.36 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.58a16 16 0 0 0 6 6l.95-.95a2 2 0 0 1 2.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0 1 21.72 16c0-.027.2.893.2.92z"/></svg>
+        </div>
+        <h3>Free Consultation</h3>
+        <p>Your first visit at any of our three Northeast Wisconsin offices costs you nothing. We will take a look, talk through your options, and give you an honest picture of what treatment involves before you commit to anything.</p>
+        <span class="treatment-tag">New Patients</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     DOCTOR BIO
+============================================= -->
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="doctor-grid">
+      <div class="doctor-photo-wrap reveal">
+        <!-- Real doctor photo from wilkeorthodontics.com -->
+        <img
+          src="https://www.wilkeorthodontics.com/assets/uploads/images/meet-dr-wilke.jpg"
+          alt="Dr. Kevin J. Wilke, orthodontist"
+          class="doctor-photo"
+          loading="lazy"
+          width="420"
+          height="560"
+        >
+        <div class="credential-badge" aria-hidden="true">
+          <span class="cred-school">Marquette University</span>
+          <span class="cred-detail">DDS 1993 + MS Orthodontics 1995</span>
+        </div>
+      </div>
+      <div class="doctor-bio reveal reveal-delay-2">
+        <span class="eyebrow">Meet Dr. Wilke</span>
+        <h2 class="headline">Thirty-one years of specialist orthodontic care, right here in Wisconsin</h2>
+        <span class="bio-name">Dr. Kevin J. Wilke, DDS, MS (Orthodontics)</span>
+        <p>Dr. Kevin Wilke grew up in Gillett, Wisconsin, earned his Doctor of Dental Surgery at Marquette University in 1993, and completed his Master of Science in Orthodontics there in 1995. He came straight home to Northeast Wisconsin and has been here ever since.</p>
+        <p>In thirty-one years he has built three permanent offices across Brown, Door, and Oconto counties. Wilke Orthodontics is independent and doctor-owned. It is not a DSO. The care your family receives comes from one orthodontist and the team built around him over three decades.</p>
+        <p>He lives in the region with his wife Mary and their three children. He knows these communities the way a neighbor does.</p>
+        <dl class="cred-list">
+          <div class="cred-item">
+            <dt>Education</dt>
+            <dd>Marquette University DDS, 1993 + MS Orthodontics, 1995</dd>
+          </div>
+          <div class="cred-item">
+            <dt>Specialty</dt>
+            <dd>Orthodontics and dentofacial orthopedics</dd>
+          </div>
+          <div class="cred-item">
+            <dt>Practice founded</dt>
+            <dd>1995, Green Bay, WI</dd>
+          </div>
+          <div class="cred-item">
+            <dt>Hometown</dt>
+            <dd>Gillett, Wisconsin</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     TEAM PHOTO STRIP
+============================================= -->
+<section class="section-sm sand-bg">
+  <div class="wrap">
+    <span class="eyebrow reveal" style="display:block;text-align:center;margin-bottom:10px;">Our team</span>
+    <h2 class="headline reveal" style="text-align:center;max-width:600px;margin:0 auto 16px;">The people who make it feel like home</h2>
+    <p style="text-align:center;color:var(--ink-soft);font-size:16px;max-width:560px;margin:0 auto 48px;" class="reveal">Dr. Wilke built a team that has been with the practice for years. Across three locations, the same familiar faces make every visit easier.</p>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;" class="reveal">
+      <div style="border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);">
+        <img
+          src="https://www.wilkeorthodontics.com/hub_sites/wilke-kevin2/www/assets/uploads/images/TrinW4.jpg"
+          alt="Team member at Wilke Orthodontics"
+          loading="lazy"
+          style="width:100%;aspect-ratio:3/4;object-fit:cover;"
+          width="280"
+          height="370"
+        >
+      </div>
+      <div style="border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);">
+        <img
+          src="https://www.wilkeorthodontics.com/hub_sites/wilke-kevin2/www/assets/uploads/images/CaityG2(1).jpg"
+          alt="Team member at Wilke Orthodontics"
+          loading="lazy"
+          style="width:100%;aspect-ratio:3/4;object-fit:cover;"
+          width="280"
+          height="370"
+        >
+      </div>
+      <div style="border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);">
+        <img
+          src="https://www.wilkeorthodontics.com/hub_sites/wilke-kevin2/www/assets/uploads/images/TonyaD3.jpg"
+          alt="Team member at Wilke Orthodontics"
+          loading="lazy"
+          style="width:100%;aspect-ratio:3/4;object-fit:cover;"
+          width="280"
+          height="370"
+        >
+      </div>
+      <div style="border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);">
+        <img
+          src="https://www.wilkeorthodontics.com/hub_sites/wilke-kevin2/www/assets/uploads/images/Amy1.jpg"
+          alt="Team member at Wilke Orthodontics"
+          loading="lazy"
+          style="width:100%;aspect-ratio:3/4;object-fit:cover;"
+          width="280"
+          height="370"
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     SOCIAL PROOF
+============================================= -->
+<section class="section alt-bg">
+  <div class="wrap">
+    <span class="eyebrow reveal">What families say</span>
+    <h2 class="headline reveal">Northeast Wisconsin families trust Wilke Orthodontics</h2>
+    <p class="intro-text reveal">Thirty-one years of word-of-mouth across Brown, Door, and Oconto counties. These are the conversations that bring new patients through the door.</p>
+    <div class="reviews-grid">
+      <div class="review-card reveal reveal-delay-1">
+        <div class="review-stars" aria-label="5 out of 5 stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <svg class="review-quote-icon" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.192 15.757c0-.88-.23-1.618-.69-2.217-.326-.412-.768-.683-1.327-.812-.55-.128-1.07-.137-1.54-.028-.16-.95.077-1.928.713-2.932.71-1.11 1.727-1.918 3.05-2.42l-.137-1.028c-1.7.388-3.076 1.18-4.13 2.374-1.05 1.19-1.577 2.56-1.577 4.11 0 1.127.303 2.07.906 2.83.605.762 1.39 1.143 2.355 1.143.96 0 1.74-.32 2.34-.962.6-.64.9-1.42.9-2.337l.138.014zm9.047 0c0-.88-.23-1.618-.69-2.217-.326-.42-.768-.69-1.327-.817-.55-.128-1.07-.137-1.54-.028-.16-.95.077-1.928.713-2.932.71-1.11 1.727-1.918 3.05-2.42l-.137-1.028c-1.7.388-3.076 1.18-4.13 2.374-1.05 1.19-1.577 2.56-1.577 4.11 0 1.127.303 2.07.906 2.83.605.762 1.39 1.143 2.355 1.143.96 0 1.74-.32 2.34-.962.6-.64.9-1.42.9-2.337l.138.014z"/></svg>
+        <p class="review-text">My three kids all had their braces done at Wilke Orthodontics over the years. Dr. Wilke is patient, explains everything clearly, and the results have been fantastic for every one of them.</p>
+        <div class="review-author">
+          Green Bay patient
+          <span>Three children treated, 2010 to 2023</span>
+        </div>
+      </div>
+      <div class="review-card reveal reveal-delay-2">
+        <div class="review-stars" aria-label="5 out of 5 stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <svg class="review-quote-icon" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.192 15.757c0-.88-.23-1.618-.69-2.217-.326-.412-.768-.683-1.327-.812-.55-.128-1.07-.137-1.54-.028-.16-.95.077-1.928.713-2.932.71-1.11 1.727-1.918 3.05-2.42l-.137-1.028c-1.7.388-3.076 1.18-4.13 2.374-1.05 1.19-1.577 2.56-1.577 4.11 0 1.127.303 2.07.906 2.83.605.762 1.39 1.143 2.355 1.143.96 0 1.74-.32 2.34-.962.6-.64.9-1.42.9-2.337l.138.014zm9.047 0c0-.88-.23-1.618-.69-2.217-.326-.42-.768-.69-1.327-.817-.55-.128-1.07-.137-1.54-.028-.16-.95.077-1.928.713-2.932.71-1.11 1.727-1.918 3.05-2.42l-.137-1.028c-1.7.388-3.076 1.18-4.13 2.374-1.05 1.19-1.577 2.56-1.577 4.11 0 1.127.303 2.07.906 2.83.605.762 1.39 1.143 2.355 1.143.96 0 1.74-.32 2.34-.962.6-.64.9-1.42.9-2.337l.138.014z"/></svg>
+        <p class="review-text">We drive from Door County for the Sturgeon Bay office and it is absolutely worth it. The team knows every patient by name and Dr. Wilke takes his time. My daughter loves coming in.</p>
+        <div class="review-author">
+          Sturgeon Bay patient
+          <span>Invisalign Teen, 2024</span>
+        </div>
+      </div>
+      <div class="review-card reveal reveal-delay-3">
+        <div class="review-stars" aria-label="5 out of 5 stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <svg class="review-quote-icon" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.192 15.757c0-.88-.23-1.618-.69-2.217-.326-.412-.768-.683-1.327-.812-.55-.128-1.07-.137-1.54-.028-.16-.95.077-1.928.713-2.932.71-1.11 1.727-1.918 3.05-2.42l-.137-1.028c-1.7.388-3.076 1.18-4.13 2.374-1.05 1.19-1.577 2.56-1.577 4.11 0 1.127.303 2.07.906 2.83.605.762 1.39 1.143 2.355 1.143.96 0 1.74-.32 2.34-.962.6-.64.9-1.42.9-2.337l.138.014zm9.047 0c0-.88-.23-1.618-.69-2.217-.326-.42-.768-.69-1.327-.817-.55-.128-1.07-.137-1.54-.028-.16-.95.077-1.928.713-2.932.71-1.11 1.727-1.918 3.05-2.42l-.137-1.028c-1.7.388-3.076 1.18-4.13 2.374-1.05 1.19-1.577 2.56-1.577 4.11 0 1.127.303 2.07.906 2.83.605.762 1.39 1.143 2.355 1.143.96 0 1.74-.32 2.34-.962.6-.64.9-1.42.9-2.337l.138.014z"/></svg>
+        <p class="review-text">I started Invisalign at 42 and was honestly nervous about the whole thing. Dr. Wilke laid out exactly what to expect at the free consult and never pushed. Best decision I have made for my smile.</p>
+        <div class="review-author">
+          Green Bay adult patient
+          <span>Invisalign, 2023</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     FREE CONSULT CTA
+============================================= -->
+<div class="cta-band">
+  <div class="wrap cta-band-inner">
+    <h2>Your free consultation is waiting</h2>
+    <p>No pressure, no commitment. Come in to any of our three locations, meet Dr. Wilke, and find out exactly what a straighter smile would take for you or your child.</p>
+    <a href="mailto:ortho@wilkeortho.com" class="btn-white">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg>
+      Book Your Free Consult
+    </a>
+    <p class="cta-locs">Green Bay + Sturgeon Bay + Oconto Falls</p>
+  </div>
+</div>
+
+<!-- =============================================
+     LOCATIONS
+============================================= -->
+<section class="section" id="locations">
+  <div class="wrap">
+    <span class="eyebrow reveal">Three offices, one specialist</span>
+    <h2 class="headline reveal">We come to your corner of Northeast Wisconsin</h2>
+    <p class="intro-text reveal">Most orthodontic practices that claim a region run a single office. Wilke Orthodontics operates three permanent locations in Brown, Door, and Oconto counties so specialist care is closer to where you live.</p>
+
+    <div class="locations-intro-grid reveal">
+      <div>
+        <!-- Real spotlight photo for locations section -->
+        <img
+          src="https://www.wilkeorthodontics.com/assets/images/spotlight/spot01dec03.jpg"
+          alt="Wilke Orthodontics office"
+          class="locations-intro-photo"
+          loading="lazy"
+          width="560"
+          height="420"
+        >
+      </div>
+      <div style="display:flex;flex-direction:column;justify-content:center;">
+        <h3 style="font-family:var(--font-display);font-size:26px;font-weight:600;color:var(--ink);margin-bottom:16px;letter-spacing:-0.2px;">Three towns. Thirty-one years.</h3>
+        <p style="font-size:16px;color:var(--ink-mid);margin-bottom:16px;line-height:1.72;">Wilke Orthodontics started in Green Bay in 1995. Over the years Dr. Wilke added the Sturgeon Bay office to serve Door County families and the Oconto Falls office to bring specialist care to Oconto County without a long drive.</p>
+        <p style="font-size:16px;color:var(--ink-mid);line-height:1.72;">All three offices provide the same treatments and the same level of care. When you need to move between locations for any reason, your records travel with you.</p>
+      </div>
+    </div>
+
+    <div class="locations-grid">
+      <div class="location-card reveal reveal-delay-1">
+        <div class="location-card-head">
+          <span class="location-pill">Brown County</span>
+          <h3>Green Bay</h3>
+        </div>
+        <div class="location-card-body">
+          <div class="location-addr">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <address>111 Broadview Drive<br>Green Bay, WI</address>
+          </div>
+          <a href="tel:+19204946060" class="location-phone">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.36 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.58a16 16 0 0 0 6 6l.95-.95a2 2 0 0 1 2.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0 1 21.72 16c0-.027.2.893.2.92z"/></svg>
+            (920) 494-6060
+          </a>
+          <div class="location-hours">
+            <strong style="color:var(--ink);font-size:13px;">Office hours</strong><br>
+            Mon to Thu: 8:00 am to 5:00 pm<br>
+            Fri: by appointment
+          </div>
+          <a href="https://maps.google.com/?q=111+Broadview+Drive+Green+Bay+WI" class="location-cta" target="_blank" rel="noopener">
+            Get directions
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="location-card reveal reveal-delay-2">
+        <div class="location-card-head">
+          <span class="location-pill">Door County</span>
+          <h3>Sturgeon Bay</h3>
+        </div>
+        <div class="location-card-body">
+          <div class="location-addr">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <address>30 N 18th Avenue, Suite 6<br>Sturgeon Bay, WI</address>
+          </div>
+          <a href="tel:+19207436060" class="location-phone">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.36 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.58a16 16 0 0 0 6 6l.95-.95a2 2 0 0 1 2.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0 1 21.72 16c0-.027.2.893.2.92z"/></svg>
+            (920) 743-6060
+          </a>
+          <div class="location-hours">
+            <strong style="color:var(--ink);font-size:13px;">Office hours</strong><br>
+            Tue + Wed: 8:00 am to 5:00 pm<br>
+            Other days: by appointment
+          </div>
+          <a href="https://maps.google.com/?q=30+N+18th+Avenue+Suite+6+Sturgeon+Bay+WI" class="location-cta" target="_blank" rel="noopener">
+            Get directions
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="location-card reveal reveal-delay-3">
+        <div class="location-card-head">
+          <span class="location-pill">Oconto County</span>
+          <h3>Oconto Falls</h3>
+        </div>
+        <div class="location-card-body">
+          <div class="location-addr">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <address>825 S Main Street<br>Oconto Falls, WI</address>
+          </div>
+          <a href="tel:+19208462206" class="location-phone">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.36 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.58a16 16 0 0 0 6 6l.95-.95a2 2 0 0 1 2.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0 1 21.72 16c0-.027.2.893.2.92z"/></svg>
+            (920) 846-2206
+          </a>
+          <div class="location-hours">
+            <strong style="color:var(--ink);font-size:13px;">Office hours</strong><br>
+            Mon + Fri: 8:00 am to 5:00 pm<br>
+            Other days: by appointment
+          </div>
+          <a href="https://maps.google.com/?q=825+S+Main+Street+Oconto+Falls+WI" class="location-cta" target="_blank" rel="noopener">
+            Get directions
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     CONTACT
+============================================= -->
+<section class="section sand-bg" id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-col reveal">
+        <span class="eyebrow">Get in touch</span>
+        <h2 class="headline">Ready to take the first step?</h2>
+        <p class="intro-text">Call any location directly, email the team, or just show up. The first consultation is free at all three offices. We will take care of the rest.</p>
+        <dl class="contact-detail-list">
+          <div class="contact-detail">
+            <div class="contact-icon-wrap" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg>
+            </div>
+            <dl class="contact-detail-text">
+              <dt>Email</dt>
+              <dd><a href="mailto:ortho@wilkeortho.com">ortho@wilkeortho.com</a></dd>
+            </dl>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-icon-wrap" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.36 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.58a16 16 0 0 0 6 6l.95-.95a2 2 0 0 1 2.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0 1 21.72 16c0-.027.2.893.2.92z"/></svg>
+            </div>
+            <dl class="contact-detail-text">
+              <dt>Green Bay (main)</dt>
+              <dd><a href="tel:+19204946060">(920) 494-6060</a></dd>
+            </dl>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-icon-wrap" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <dl class="contact-detail-text">
+              <dt>Website</dt>
+              <dd><a href="https://www.wilkeorthodontics.com" target="_blank" rel="noopener">wilkeorthodontics.com</a></dd>
+            </dl>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-icon-wrap" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <dl class="contact-detail-text">
+              <dt>Social</dt>
+              <dd>
+                <a href="https://www.instagram.com/wilkeortho111" target="_blank" rel="noopener">@wilkeortho111</a> on Instagram
+              </dd>
+            </dl>
+          </div>
+        </dl>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="contact-map-card">
+          <div class="contact-map-placeholder" style="width:100%;aspect-ratio:4/3;background:linear-gradient(135deg,var(--sky) 0%,var(--sky-deep) 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;">
+            <!-- Real office spotlight photo in place of map -->
+            <img
+              src="https://www.wilkeorthodontics.com/assets/images/spotlight/spot01dec04.jpg"
+              alt="Wilke Orthodontics Green Bay office"
+              loading="lazy"
+              style="width:100%;aspect-ratio:4/3;object-fit:cover;"
+              width="520"
+              height="390"
+            >
+          </div>
+          <div class="contact-map-body">
+            <p class="map-loc-name">Wilke Orthodontics, Green Bay</p>
+            <address>111 Broadview Drive, Green Bay, WI</address>
+            <a href="https://maps.google.com/?q=111+Broadview+Drive+Green+Bay+WI" class="link-directions" target="_blank" rel="noopener">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Get directions
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     FOOTER
+============================================= -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-wrap" style="margin-bottom:0;">
+          <div class="logo-mark" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.5 2 5 5 5 8.5c0 2 .5 3.5 1 5L8 20c.5 2 2 2 4 2s3.5 0 4-2l2-6.5c.5-1.5 1-3 1-5C19 5 15.5 2 12 2z"/></svg>
+          </div>
+          <div class="logo-text">
+            <strong>Wilke Orthodontics</strong>
+            <span>Northeast Wisconsin</span>
+          </div>
+        </div>
+        <p class="footer-about">Independent, doctor-owned orthodontic practice serving Northeast Wisconsin since 1995. Three locations in Green Bay, Sturgeon Bay, and Oconto Falls.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Treatments</h5>
+        <ul>
+          <li><a href="#treatments">Invisalign</a></li>
+          <li><a href="#treatments">Invisalign Teen</a></li>
+          <li><a href="#treatments">Braces</a></li>
+          <li><a href="#treatments">SureSmile 3D</a></li>
+          <li><a href="#treatments">Phase 1 Treatment</a></li>
+          <li><a href="#treatments">Free Consultation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Locations</h5>
+        <ul>
+          <li><a href="#locations">Green Bay</a></li>
+          <li><a href="#locations">Sturgeon Bay</a></li>
+          <li><a href="#locations">Oconto Falls</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:ortho@wilkeortho.com">ortho@wilkeortho.com</a></li>
+          <li><a href="tel:+19204946060">(920) 494-6060</a></li>
+          <li><a href="https://www.wilkeorthodontics.com" target="_blank" rel="noopener">wilkeorthodontics.com</a></li>
+          <li><a href="https://www.instagram.com/wilkeortho111" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/WilkeOrtho" target="_blank" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Wilke Orthodontics. Dr. Kevin J. Wilke, DDS, MS. Green Bay, Sturgeon Bay and Oconto Falls, Wisconsin.</p>
+      <p class="footer-demo-note">Demo site prepared by <a href="https://andrei170.github.io/ag1/#services" target="_blank" rel="noopener">AG Consulting</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- =============================================
+     JAVASCRIPT
+============================================= -->
+<script>
+  // Sticky header shadow on scroll
+  (function() {
+    const header = document.getElementById('site-header');
+    if (!header) return;
+    const onScroll = () => {
+      header.classList.toggle('scrolled', window.scrollY > 10);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+  })();
+
+  // Scroll reveal (respects prefers-reduced-motion via CSS)
+  (function() {
+    const prefersMotion = window.matchMedia('(prefers-reduced-motion: no-preference)').matches;
+    if (!prefersMotion) return;
+    const els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) {
+      els.forEach(el => el.classList.add('revealed'));
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(el => io.observe(el));
+  })();
+</script>
+
+</body>
+</html>
